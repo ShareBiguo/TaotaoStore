@@ -47,6 +47,29 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.mybatis.generator</groupId>
+                <artifactId>mybatis-generator-maven-plugin</artifactId>
+                <version>1.3.2</version>
+            </plugin>
+        </plugins>
 
+        <!--<resources>-->
+            <!--<resource>-->
+                <!--&lt;!&ndash;没法取到数据，出现错误：org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)&ndash;&gt;-->
+                <!--&lt;!&ndash;<directory>src/main/resources</directory>&ndash;&gt;-->
+                <!--&lt;!&ndash;成功&ndash;&gt;-->
+                <!--<directory>src/main/java</directory>-->
+                <!--<includes>-->
+                    <!--<include>**/*.properties</include>-->
+                    <!--<include>**/*.xml</include>-->
+                <!--</includes>-->
+                <!--<filtering>false</filtering>-->
+            <!--</resource>-->
+        <!--</resources>-->
+
+    </build>
 
 </project>

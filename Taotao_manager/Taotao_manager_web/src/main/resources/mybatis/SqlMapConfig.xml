@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <mappers>
+        <!--这是目前为止唯一能成功的，因为xml文件无需与接口在同一个包下-->
+        <!--但是无法批量加载-->
+        <!--若想批量加载位置不与接口在同一个文件夹下的xml文件，在配置SqlSessionFactory的bean指定一个属性即可！-->
+        <!--<mapper resource="mapper/TbItemMapper.xml"/>-->
+
+        <!--不行，甚至应用都不能启动,bean无法初始化，因为找不到这个文件（没有被编译）-->
+        <!--<mapper resource="com/taotao/mapper/TbItemMapper.xml"/>-->
+
+        <!--使用package和class来指定时，必须保证xml和接口在同一个包下-->
+        <!--但是即使在一个包下了，IDEA中的Maven项目默认不会编译java目录下的xml文件-->
+        <!--<package name="mapper"/>-->
+
+        <!--应用没法启动，bean无法完成初始化，因为找不到与类同名的xml-->
+        <!--<mapper class="com.taotao.mapper.TbItemMapper"/>-->
+    </mappers>
+
+</configuration>
