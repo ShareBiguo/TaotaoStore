@@ -13,6 +13,6 @@
         <module name="Taotao_manager_web" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8" />
+    <bytecodeTargetLevel target="7" />
   </component>
 </project>

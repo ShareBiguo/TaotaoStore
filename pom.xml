@@ -32,6 +32,7 @@
         <commons-lang3.version>3.3.2</commons-lang3.version>
         <commons-io.version>1.3.2</commons-io.version>
         <commons-net.version>3.3</commons-net.version>
+        <!-- 教程中是经过修改的3.4.2-fix版本-->
         <pagehelper.version>3.4.3</pagehelper.version>
         <jsqlparser.version>0.9.1</jsqlparser.version>
         <commons-fileupload.version>1.3.1</commons-fileupload.version>
@@ -39,6 +40,7 @@
         <solrj.version>4.10.3</solrj.version>
         <freemarker.version>2.3.23</freemarker.version>
         <quartz.version>2.2.2</quartz.version>
+        <fastdfs.version>1.27.0</fastdfs.version>
     </properties>
 
     <!--声明依赖，并不真正使用依赖，在子模块中才会使用-->
@@ -201,7 +203,15 @@
                 <artifactId>quartz</artifactId>
                 <version>${quartz.version}</version>
             </dependency>
+            <!--FastDFS非官方jar，官方那个下载不了-->
+            <!-- https://mvnrepository.com/artifact/net.arccode/fastdfs-client-java -->
+            <dependency>
+                <groupId>net.arccode</groupId>
+                <artifactId>fastdfs-client-java</artifactId>
+                <version>${fastdfs.version}</version>
+            </dependency>
         </dependencies>
+
     </dependencyManagement>
 
     <build>

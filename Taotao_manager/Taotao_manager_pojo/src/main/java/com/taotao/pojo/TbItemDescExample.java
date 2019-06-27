@@ -9,6 +9,7 @@ public class TbItemDescExample {
 
     protected boolean distinct;
 
+    //内部类的所有子句都将通过“or”运算连接起来
     protected List<Criteria> oredCriteria;
 
     public TbItemDescExample() {
@@ -39,12 +40,14 @@ public class TbItemDescExample {
         oredCriteria.add(criteria);
     }
 
+//    所有的Criteria实例都会添加到Example的oredCriteria列表中
     public Criteria or() {
         Criteria criteria = createCriteriaInternal();
         oredCriteria.add(criteria);
         return criteria;
     }
 
+    //当使用createCriteria方法创建第一个Criteria对象时，它会自动添加到Criteria对象列表中
     public Criteria createCriteria() {
         Criteria criteria = createCriteriaInternal();
         if (oredCriteria.size() == 0) {
@@ -59,12 +62,17 @@ public class TbItemDescExample {
     }
 
     public void clear() {
+        //清空条件列表
         oredCriteria.clear();
         orderByClause = null;
         distinct = false;
     }
 
+    /*
+    * 每个字段都会生成12个值判断方法，文档里有说14个，这里缺了LIKE和NOT LIKE
+    * */
     protected abstract static class GeneratedCriteria {
+        //这些条件都会通过“and”运算添加到where子句中。
         protected List<Criterion> criteria;
 
         protected GeneratedCriteria() {

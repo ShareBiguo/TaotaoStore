@@ -5,6 +5,15 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 
+    <!--配置分页插件-->
+    <plugins>
+        <!--原理就是拦截器-->
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <!--指定使用的数据库,不同的数据库分页处理不一样-->
+            <property name="dialect" value="mysql"/>
+        </plugin>
+    </plugins>
+
     <mappers>
         <!--这是目前为止唯一能成功的，因为xml文件无需与接口在同一个包下-->
         <!--但是无法批量加载-->
